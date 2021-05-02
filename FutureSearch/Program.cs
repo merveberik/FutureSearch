@@ -21,6 +21,8 @@ namespace FutureSearch
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+
+
                 });
     }
 }
