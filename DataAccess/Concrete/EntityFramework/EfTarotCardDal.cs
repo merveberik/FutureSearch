@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfCategoryDal
+    public class EfTarotCardDal
     {
     }
 }
