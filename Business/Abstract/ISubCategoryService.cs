@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Business.Concrete
+namespace Business.Abstract
 {
-    public class ConcreteManager
+    public interface ISubCategoryService
     {
     }
 }
