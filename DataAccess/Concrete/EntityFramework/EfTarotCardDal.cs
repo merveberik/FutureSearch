@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Core.DataAccess.EntityFramework;
+using DataAccess.Abstract;
+using Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfTarotCardDal
+    public class EfTarotCardDal : EfEntityRepositoryBase<TarotCard, FutureSearchContext>, ITarotCardDal
     {
     }
 }
