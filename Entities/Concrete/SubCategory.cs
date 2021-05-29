@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Entities.Concrete
 {
-    public class SubCategory
+    public class SubCategory : IEntity
     {
         public int SubCategoryId { get; set; }
         public string SubCategoryName { get; set; }

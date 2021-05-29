@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Business.Concrete;
+using DataAccess.Concrete.EntityFramework;
+using Entities.Concrete;
+using System;
 
 namespace ConsoleUI
 {
@@ -6,7 +9,12 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            SubCategoryManager subCategoryManager = new SubCategoryManager(new EfSubCategoryDal());
+            var result = subCategoryManager.GetAll().Data;
+            foreach (var brand in result)
+            {
+                Console.WriteLine(brand.SubCategoryId + "/" + brand.SubCategoryName);
+            }
         }
     }
 }
