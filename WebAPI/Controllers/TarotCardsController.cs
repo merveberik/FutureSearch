@@ -11,21 +11,19 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoriesController : ControllerBase
+    public class TarotCardsController : ControllerBase
     {
+        private ITarotCardService _tarotCardService;
 
-        private ICategoryService _categoryService;
-
-        public CategoriesController(ICategoryService categoryService)
+        public TarotCardsController(ITarotCardService tarotCardService)
         {
-            _categoryService = categoryService;
+            _tarotCardService = tarotCardService;
         }
 
         [HttpGet("getall")]
-        //public List<Product> Get() // Startup altına referansları belirtince değiştirdik
         public IActionResult GetAll()
         {
-            var result = _categoryService.GetAll();
+            var result = _tarotCardService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
@@ -34,9 +32,9 @@ namespace WebAPI.Controllers
 
         }
         [HttpPost("add")]
-        public IActionResult Add(Category category)
+        public IActionResult Add(TarotCard tarotCard)
         {
-            var result = _categoryService.Add(category);
+            var result = _tarotCardService.Add(tarotCard);
             if (result.Success)
             {
                 return Ok(result);
@@ -45,15 +43,14 @@ namespace WebAPI.Controllers
         }
 
         [HttpPut("update")]
-        public IActionResult Update(Category category)
+        public IActionResult Update(TarotCard tarotCard)
         {
-            var result = _categoryService.Update(category);
+            var result = _tarotCardService.Update(tarotCard);
             if (result.Success)
             {
                 return Ok(result);
             }
             return BadRequest(result);
         }
-
     }
 }

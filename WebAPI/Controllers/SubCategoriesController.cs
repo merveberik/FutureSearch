@@ -11,21 +11,18 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoriesController : ControllerBase
+    public class SubCategoriesController : ControllerBase
     {
-
-        private ICategoryService _categoryService;
-
-        public CategoriesController(ICategoryService categoryService)
+        private ISubCategoryService _subCategoryService;
+        public SubCategoriesController(ISubCategoryService subCategoryService)
         {
-            _categoryService = categoryService;
+            _subCategoryService = subCategoryService;
         }
 
         [HttpGet("getall")]
-        //public List<Product> Get() // Startup altına referansları belirtince değiştirdik
         public IActionResult GetAll()
         {
-            var result = _categoryService.GetAll();
+            var result = _subCategoryService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
@@ -34,9 +31,9 @@ namespace WebAPI.Controllers
 
         }
         [HttpPost("add")]
-        public IActionResult Add(Category category)
+        public IActionResult Add(SubCategory subCategory)
         {
-            var result = _categoryService.Add(category);
+            var result = _subCategoryService.Add(subCategory);
             if (result.Success)
             {
                 return Ok(result);
@@ -45,15 +42,14 @@ namespace WebAPI.Controllers
         }
 
         [HttpPut("update")]
-        public IActionResult Update(Category category)
+        public IActionResult Update(SubCategory subCategory)
         {
-            var result = _categoryService.Update(category);
+            var result = _subCategoryService.Update(subCategory);
             if (result.Success)
             {
                 return Ok(result);
             }
             return BadRequest(result);
         }
-
     }
 }
