@@ -17,17 +17,20 @@ namespace Business.DependencyResolvers.Autofac
 {
     public class AutofacBusinessModule : Module
     {
-        /* WebAPI içerisinde 
-         * services.AddSingleton<IProductService, ProductManager>();
-         *   services.AddSingleton<IProductDal, EfProductDal>(); 
-         * kodlarını yazdığım yeri burada yapacağız */
-
         protected override void Load(ContainerBuilder builder)
         {
 
             builder.RegisterType<CategoryManager>().As<ICategoryService>().SingleInstance();
             builder.RegisterType<EfCategoryDal>().As<ICategoryDal>().SingleInstance();
 
+            builder.RegisterType<SubCategoryManager>().As<ISubCategoryService>().SingleInstance();
+            builder.RegisterType<EfSubCategoryDal>().As<ISubCategoryDal>().SingleInstance();
+
+            builder.RegisterType<CardDescriptionManager>().As<ICardDescriptionService>().SingleInstance();
+            builder.RegisterType<EfCardDescriptionDal>().As<ICardDescriptionDal>().SingleInstance();
+
+            builder.RegisterType<TarotCardManager>().As<ITarotCardService>().SingleInstance();
+            builder.RegisterType<EfTarotCardDal>().As<ITarotCardDal>().SingleInstance();
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
