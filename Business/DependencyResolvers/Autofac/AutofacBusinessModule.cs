@@ -32,6 +32,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<TarotCardManager>().As<ITarotCardService>().SingleInstance();
             builder.RegisterType<EfTarotCardDal>().As<ITarotCardDal>().SingleInstance();
 
+            builder.RegisterType<TarotImageManager>().As<ITarotImageService>().SingleInstance();
+            builder.RegisterType<EfTarotImageDal>().As<ITarotImageDal>().SingleInstance();
+
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()

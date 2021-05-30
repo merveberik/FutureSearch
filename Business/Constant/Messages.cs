@@ -16,6 +16,7 @@ namespace Business.Constant
         public static string TarotCardAdded = "Tarot kartları eklendi";
         public static string TarotCardUpdated = "Tarot kartları güncellendi";
 
-        public static object CategoryNotAdded ="Kategori eklenemedi";
+        public static string CategoryNotAdded ="Kategori eklenemedi";
+        public static string FileNotFound = "Dosya bulunamadı";
     }
 }

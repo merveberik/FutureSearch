@@ -18,6 +18,8 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<CardDescription> CardDescriptions { get; set; }
         public DbSet<TarotCard> TarotCards{ get; set; }
+        public DbSet<TarotImage> TarotImages { get; set; }
+
 
     }
 }
