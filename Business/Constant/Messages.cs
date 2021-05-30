@@ -15,5 +15,7 @@ namespace Business.Constant
         public static string SubCategoryUpdated = "Sub Kategori güncellendi";
         public static string TarotCardAdded = "Tarot kartları eklendi";
         public static string TarotCardUpdated = "Tarot kartları güncellendi";
+
+        public static object CategoryNotAdded ="Kategori eklenemedi";
     }
 }

@@ -7,6 +7,7 @@ namespace Entities.Concrete
 {
     public class SubCategory : IEntity
     {
+        public int CategoryId { get; set; }
         public int SubCategoryId { get; set; }
         public string SubCategoryName { get; set; }
         public string Description { get; set; }

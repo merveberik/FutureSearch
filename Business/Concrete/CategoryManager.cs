@@ -18,8 +18,12 @@ namespace Business.Concrete
         }
         public IResult Add(Category category)
         {
-            _categoryDal.Add(category);
-            return new SuccessResult(Messages.CategoryAdded);
+            if (category == null)
+            {
+                return new ErrorResult("Messages.CategoryNotAdded");
+            }
+                _categoryDal.Add(category);
+                return new SuccessResult(Messages.CategoryAdded);
         }
 
         public IDataResult<List<Category>> GetAll()
